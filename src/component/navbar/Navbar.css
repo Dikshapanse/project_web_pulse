@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1c1e2f, #1f4037);
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #1c1e2f, #1f4037);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  color: white;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
+  height: 70px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 55px;
+  width: 100px;
+  border-radius: 7px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #a3ffac;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+.profile-icon {
+  font-size: 1.5rem;
+  color: #a3ffac;
+  transition: 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #ffffff;
+}
