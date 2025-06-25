@@ -18,46 +18,50 @@ function AccountDetails() {
 
   return (
     <>
-    <Navbar />
-      <div className="main-content">       
-      </div>
+  <Navbar />
+  <div className="page-wrapper">
     <div className="account-container">
       <h2>Account Details.</h2>
-
       <div className="card">
         <h3>Account Info.</h3>
+        <div className="form-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+        </div>
+
           <div className="form-group">
-            <label>Full Name</label>
-            <input
-              type="text"
-              placeholder="Enter your full name"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label>E-mail Nddress</label>
-            <input
+            <label>E-mail Address</label> 
+              <input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="form-group">
-            <label>Enter Your Mobile No.</label>
-            <input
-              type="number"
-              placeholder="Mobile  "
-              value={mobileNumber}
-              onChange={(e) => setmobileNumber(e.target.value)}
-            />
-            <button className="save-btn" onClick={handleSave}>Save changes</button>
-          </div>
-          
-       </div>   
+
+        <div className="form-group">
+          <label>Mobile No.</label>
+          <input
+            type="number"
+            placeholder="Enter your mobile"
+            value={mobileNumber}
+            onChange={(e) => setmobileNumber(e.target.value)}
+          />
+        </div>
+
+        <button className="save-btn" onClick={handleSave}>
+          Save changes
+        </button>
+      </div>
     </div>
-    </>
+  </div>
+</>
+
   );
 }
 
