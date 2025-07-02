@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import './Login.css';
 import { useNavigate, Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";  // 👈 Import icons
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // 👈 toggle state
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -19,11 +21,11 @@ function Login() {
 
   return (
     <>
-    
       <div className="status">
         <div className="dot"></div>
         Web Pulse
       </div>
+
       <div className="login-container">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
@@ -34,13 +36,23 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="password"
-            placeholder="Password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+
+          <div className="password-wrapper">
+            <input
+              type={showPassword ? "text" : "password"} // 👈 toggle input type
+              placeholder="Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEye /> : <FaEyeSlash /> }
+            </span>
+          </div>
+
           <a href="#" className="forgot-password">Forgot Password?</a>
           <button type="submit">Login</button>
         </form>
