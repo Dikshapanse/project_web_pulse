@@ -19,11 +19,11 @@ function AccountDetails() {
   return (
     <>
   <Navbar />
-  <div className="page-wrapper">
+  <div className="wrapper">
+  <div className="page-wrapper top-gap">
     <div className="account-container">
       <h2>Account Details.</h2>
       <div className="card">
-        <h3>Account Info.</h3>
         <div className="form-group">
           <label>Full Name</label>
           <input
@@ -59,6 +59,7 @@ function AccountDetails() {
         </button>
       </div>
     </div>
+  </div>
   </div>
 </>
 

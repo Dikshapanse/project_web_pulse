@@ -5,11 +5,11 @@ import Register from './pages/registerpage/Register';
 import Monitor from './component/Add_website/AddWebsite';
 import Details from './component/AccountDetails/Details';
 import Listing from './component/Listing/Listing';
+import WebDetails from './component/WebDetails/WebDetails';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />      
@@ -17,8 +17,8 @@ function App() {
       <Route path="/monitor" element={<Monitor />} />
       <Route path="/detail" element={<Details />} />
       <Route path="/listing" element={<Listing />} />
-    </Routes> 
-
+      <Route path='/webDetail' element={<WebDetails />} />
+    </Routes>
   );
 }
 

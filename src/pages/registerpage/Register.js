@@ -30,7 +30,7 @@ function Register() {
     <>
       <div className="status">
         <div className="dot"></div>
-        <span className="brand-name">Webs Pulse</span>
+        <span className="brand-name">Web Pulse</span>
       </div>
 
       <div className="register-container">

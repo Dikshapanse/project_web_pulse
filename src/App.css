@@ -40,3 +40,21 @@
 .blank{
   color: rgb(73, 130, 191);
 } 
+
+#root{
+  width: 100%;
+  justify-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;      
+}
+
+.top-gap{
+  width: 1050px;
+  position: absolute;
+  top: 17%;
+}

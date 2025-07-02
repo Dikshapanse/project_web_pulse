@@ -17,20 +17,6 @@ function AddWebsite() {
   ];
   const shortLabels = ["1m", "5m", "30m", "1h", "12h", "24h"];
 
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    updateSliderBackground(interval);
-  }, [interval]);
-
-  const updateSliderBackground = (value) => {
-    const max = 5;
-    const percent = (value / max) * 100;
-    if (sliderRef.current) {
-      sliderRef.current.style.background = `linear-gradient(to right, #5f5fff 0%, #5f5fff ${percent}%, #30363d ${percent}%, #30363d 100%)`;
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -47,7 +33,10 @@ function AddWebsite() {
   return (
     <>
       <Navbar />
-      <div className="main-content"></div>
+      
+      <div className="wrapper">
+      <div className="dashboard top-gap">
+      <main className="main-content">
       <form className="addweb-form" onSubmit={handleSubmit}>
         <h2>Add Websites</h2>
         <div className="card">
@@ -99,7 +88,6 @@ function AddWebsite() {
             />
           </div>
 
-          {/* Interval Section */}
           <div className="form-group">
             <label className="monitor-title">Website Monitor Interval</label>
             <div className="monitor-desc">
@@ -113,7 +101,6 @@ function AddWebsite() {
                 max="5"
                 value={interval}
                 className="slider"
-                ref={sliderRef}
                 onChange={(e) => setInterval(parseInt(e.target.value))}
               />
             </div>
@@ -127,20 +114,23 @@ function AddWebsite() {
 
          <button
             type="submit"
-              className="add-button"
+              className="create-btn"
               disabled={
               !name.trim() ||
               !url.trim() ||
               (!email1.trim() && !email2.trim() && !email3.trim())
             }
             >
-            <Link to="/listing" className="add-button">Create</Link>
+            <Link to="/listing" className='add-btn'>Create</Link>
           </button>
 
-          <button type="button"><Link to="/listing" className="add-button">Cancel</Link></button>
+          <button type="button" className="cancel-btn"><Link to="/listing" className='add-btn'>Cancel</Link></button>
   
         </div>
       </form>
+      </main>
+      </div>
+      </div>
     </>
   );
 }

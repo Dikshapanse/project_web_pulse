@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (email === "admin@123" && password === "admin123") {
+    if (email === "admin123@gmail.com" && password === "admin123") {
       navigate("/home");
     } else {
       alert("Invalid credentials. Please try again.");
@@ -19,9 +19,10 @@ function Login() {
 
   return (
     <>
+    
       <div className="status">
         <div className="dot"></div>
-        Webs Pulse
+        Web Pulse
       </div>
       <div className="login-container">
         <h2>Login</h2>
