@@ -2,6 +2,57 @@ import React from 'react';
 import Navbar from '../navbar/Navbar';
 import { Link } from "react-router-dom";
 import './WebDetails.css';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const WebsiteCard = ({ site }) => {
+  return (
+    <div className="website-card">
+      <h2 className="website-title">{site.name}</h2>
+      <p className="website-url">{site.url}</p>
+      <div className="website-details">
+        <p>Status: <span className="status">{site.status}</span></p>
+        <p>Last Check: {site.lastCheck}</p>
+        <p>Uptime 24h: {site.uptime['24h']}</p>
+        <p>Uptime 7d: {site.uptime['7d']}</p>
+        <p>Uptime 30d: {site.uptime['30d']}</p>
+        <p>Response Time: <span className="response-time">{site.responseTime}</span></p>
+      </div>
+    </div>
+  );
+};
+
+const ResponseChart = () => {
+  const data = [
+    { time: '12:00', response: 220 },
+    { time: '12:05', response: 215 },
+    { time: '12:10', response: 210 },
+    { time: '12:15', response: 221 },
+    { time: '12:20', response: 218 },
+  ];
+
+  return (
+    <div className="chart-container">
+      <h2 className="chart-title">Response Time (Last Hour)</h2>
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="time" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="response" stroke="#38bdf8" strokeWidth={2} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
 
 function WebDetail() {
   return (
@@ -50,12 +101,9 @@ function WebDetail() {
                     <p className="green inpadding">100%</p>
                 </div>
             </div>
-
+             <ResponseChart />
             <div className="response-time">
-                <div className="header">
-                    <h4>Response Time</h4>
-                </div>
-                <div className="graph">📈 Graph placeholder (replace with chart if needed)</div>
+               
                 <div className="stats">
                     <p><strong>Average:</strong> 221 ms</p>
                     <p><strong>Minimum:</strong> 221 ms</p>

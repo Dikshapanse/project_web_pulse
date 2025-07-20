@@ -16,13 +16,13 @@ const monitorData = [
 function Listing() {
   const [searchTerm, setSearchTerm] = useState('');
   const [openMenuId, setOpenMenuId] = useState(null);
-  const menuRef = useRef(null); // 👈 ref for dropdown
+  const menuRef = useRef(null); 
 
   const toggleMenu = (id) => {
     setOpenMenuId(prev => (prev === id ? null : id));
   };
 
-  // 👇 useEffect to close menu on outside click
+  // useEffect to close menu on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {

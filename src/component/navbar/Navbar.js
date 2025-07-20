@@ -21,7 +21,7 @@ function Navbar() {
         </div>
 
         <ul className="nav-links">
-          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/Dashboard">Dashboard</Link></li>
           <li><Link to="/listing">Website</Link></li>
           <li className="profile-container">
             <i

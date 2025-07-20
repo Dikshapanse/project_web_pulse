@@ -8,7 +8,7 @@ body {
 .dashboard-container {
   margin-bottom: 50px;
   padding: 20px;
-  background-color: #1f2937;
+  background-color: #0f172a;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   color: white;
@@ -16,6 +16,7 @@ body {
 }
 
 .website-header {
+  background-color: #0f172a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,22 +102,6 @@ color: #b2f5ea;
   margin-top: 20px;
 }
 
-.response-time .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.response-time .graph {
-  margin: 20px 0;
-  height: 200px;
-  background-color: #0e172a;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .stats{
     display: flex;
     gap: 25%
@@ -124,4 +109,59 @@ color: #b2f5ea;
 
 .stats p {
   margin: 5px 0;
+}
+.website-card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.website-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.website-title {
+  font-size: 1.3rem;
+  color: #f8fafc;
+  margin-bottom: 0.2rem;
+}
+
+.website-url {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.website-details p {
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+  color: #e2e8f0;
+}
+
+.website-details .status {
+  color: #10b981;
+  font-weight: bold;
+}
+
+.website-details .response-time {
+  color: #22d3ee;
+  font-weight: bold;
+}
+
+.chart-container {
+  margin-top: 3rem;
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.chart-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 1.5rem;
 }

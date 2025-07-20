@@ -26,7 +26,7 @@ function Register() {
       return;
     }
 
-    navigate("/home");
+    navigate("/monitor");
   };
 
   return (

@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import './Login.css';
 import { useNavigate, Link } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";  // 👈 Import icons
+import { FaEye, FaEyeSlash } from "react-icons/fa";  
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // 👈 toggle state
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     if (email === "admin123@gmail.com" && password === "admin123") {
-      navigate("/home");
+      navigate("/listing");
     } else {
       alert("Invalid credentials. Please try again.");
     }
@@ -39,7 +38,7 @@ function Login() {
 
           <div className="password-wrapper">
             <input
-              type={showPassword ? "text" : "password"} // 👈 toggle input type
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               required
               value={password}
