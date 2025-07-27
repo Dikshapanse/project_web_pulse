@@ -67,7 +67,7 @@ function Listing() {
                     <div className="status-circle">⬆</div>
                     <h3>Current Status</h3>
                   </div>
-                  <p>2 Up, 0 Down, 0 Paused</p>
+                  <p>4 Up, 3 Down, 0 Paused</p>
                 </div>
               </div>
             </header>
