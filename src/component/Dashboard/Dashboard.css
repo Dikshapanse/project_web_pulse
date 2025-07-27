@@ -50,6 +50,7 @@ body {
 }
 
 .website-details p {
+  padding-bottom: 10px;
   font-size: 0.85rem;
   margin: 0.25rem 0;
   color: #e2e8f0;
@@ -58,6 +59,7 @@ body {
 .website-details .status {
   color: #10b981;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .website-details .response-time {
@@ -94,7 +96,7 @@ body {
 .dashboard-heading {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #38bdf8;
+  color: #b2f5ea;
   margin: 0;
 }
 
@@ -108,7 +110,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: center;  /* ✅ Optional, अगर align-items काम ना करे */
+  align-self: center; 
 }
 
 .add-website-btn:hover {

@@ -82,6 +82,14 @@ const Dashboard = () => {
       uptime: { '24h': '100%', '7d': '100%', '30d': '100%' },
       responseTime: '213 ms',
     },
+     {
+      name: 'Telegram',
+      url: 'https://www.telegram.org',
+      status: 'Up',
+      lastCheck: '2 min ago',
+      uptime: { '24h': '100%', '7d': '100%', '30d': '100%' },
+      responseTime: '224ms',
+    },
   ];
 
   return (

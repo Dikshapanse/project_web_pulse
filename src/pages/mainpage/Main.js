@@ -20,11 +20,10 @@ const HomePage = () => {
                 {/* <a href="#features">Features</a>
                 <a href="#status">Live Status</a>
                 <a href="#pricing">Pricing</a> */}
-                <a href="#contact">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </div>
             </nav>
 
-            {/* Hero Section */}
             <section className="hero">
               <div className="hero-text">
                 <h1>Monitor Your Websites in Real-Time</h1>
@@ -33,7 +32,6 @@ const HomePage = () => {
               </div>
             </section>
 
-            {/* Features */}
             <section id="features" className="features">
               <h2>Powerful Features</h2>
               <div className="features-grid">
@@ -54,6 +52,9 @@ const HomePage = () => {
                 </div>
               </div>
             </section>
+          </div>
+          <div className="bottom-note">
+            <p>© 2025 Website Monitoring Dashboard. All rights reserved.</p>
           </div>
         </div>
       </div>

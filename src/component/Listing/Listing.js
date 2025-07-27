@@ -10,7 +10,7 @@ const monitorData = [
   { id: 4, name: 'Facebook', url: 'www.facebook.com/', status: 'Up 1 min, 55 sec', uptime: '100%', isUp: true },
   { id: 5, name: 'Facebook', url: 'www.facebook.com/', status: 'Preparing... 30 sec', uptime: '0%', isUp: false },
   { id: 6, name: 'Google', url: 'www.google.com/', status: 'Up 4 min, 17 sec', uptime: '100%', isUp: true },
-  { id: 7, name: 'YouTube', url: 'www.youtube.com/', status: 'Up 1 min, 11 sec', uptime: '100%', isUp: true },
+  { id: 7, name: 'Telegram', url: 'www.telegram.org/', status: 'Up 3 min, 21 sec', uptime: '100%', isUp: true },
 ];
 
 function Listing() {

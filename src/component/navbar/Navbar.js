@@ -23,6 +23,7 @@ function Navbar() {
         <ul className="nav-links">
           <li><Link to="/Dashboard">Dashboard</Link></li>
           <li><Link to="/listing">Website</Link></li>
+          <li><Link to="/contact">Contact US</Link></li>
           <li className="profile-container">
             <i
               className="fas fa-user-circle profile-icon"

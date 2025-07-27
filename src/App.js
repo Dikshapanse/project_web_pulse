@@ -8,6 +8,7 @@ import Listing from './component/Listing/Listing';
 import WebDetails from './component/WebDetails/WebDetails';
 import Dashboard from './component/Dashboard/Dashboard';
 import { Routes, Route } from 'react-router-dom';
+import ContactUs from './component/Contact/Contact';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/listing" element={<Listing />} />
       <Route path='/webDetail' element={<WebDetails />} />
       <Route path='/Dashboard' element={<Dashboard />} />
+      <Route path='/Contact' element={<ContactUs />} />
     </Routes>
   );
 }

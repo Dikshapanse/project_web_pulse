@@ -78,6 +78,7 @@ body {
 .profile-container {
   position: relative;
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .dropdown-menu {

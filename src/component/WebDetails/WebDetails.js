@@ -104,11 +104,11 @@ function WebDetail() {
              <ResponseChart />
             <div className="response-time">
                
-                <div className="stats">
-                    <p><strong>Average:</strong> 221 ms</p>
-                    <p><strong>Minimum:</strong> 221 ms</p>
-                    <p><strong>Maximum:</strong> 221 ms</p>
-                </div>
+              <div className="stats">
+                <p><strong>Average:</strong> 221 ms</p>
+                <p><strong>Minimum:</strong> 221 ms</p>
+                <p><strong>Maximum:</strong> 221 ms</p>
+              </div>
             </div>
         </div>
        </div>

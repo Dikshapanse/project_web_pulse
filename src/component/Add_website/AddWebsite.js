@@ -35,101 +35,101 @@ function AddWebsite() {
       <Navbar />
       
       <div className="wrapper">
-      <div className="dashboard top-gap">
-      <main className="main-content">
-      <form className="addweb-form" onSubmit={handleSubmit}>
-        <h2>Add Websites</h2>
-        <div className="card">
-          
-          <div className="form-group">
-            <label>Website Name:</label>
-            <input
-              type="text"
-              placeholder="Name of website"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
+        <div className="dashboard top-gap">
+          <main className="main-content">
+            <form className="addweb-form" onSubmit={handleSubmit}>
+              <h2>Add Websites</h2>
+              <div className="card">
+                
+                <div className="form-group">
+                  <label>Website Name:</label>
+                  <input
+                    type="text"
+                    placeholder="Name of website"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
 
-          <div className="form-group">
-            <label>Website URL:</label>
-            <input
-              type="url"
-              placeholder="https://"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              required
-            />
-          </div>
+                <div className="form-group">
+                  <label>Website URL:</label>
+                  <input
+                    type="url"
+                    placeholder="https://"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    required
+                  />
+                </div>
 
-          <div className="form-group">
-            <label>Notify me in Email:</label>
-            <input
-              type="email"
-              placeholder="Enter your email 1"
-              value={email1}
-              onChange={(e) => setEmail1(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Enter your email 2"
-              value={email2}
-              onChange={(e) => setEmail2(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Enter your email 3"
-              value={email3}
-              onChange={(e) => setEmail3(e.target.value)}
-              required
-            />
-          </div>
+                <div className="form-group">
+                  <label>Notify me in Email:</label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email 1"
+                    value={email1}
+                    onChange={(e) => setEmail1(e.target.value)}
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Enter your email 2"
+                    value={email2}
+                    onChange={(e) => setEmail2(e.target.value)}
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Enter your email 3"
+                    value={email3}
+                    onChange={(e) => setEmail3(e.target.value)}
+                    required
+                  />
+                </div>
 
-          <div className="form-group">
-            <label className="monitor-title">Website Monitor Interval</label>
-            <div className="monitor-desc">
-              Your websites will be checked every <b>{intervalLabels[interval]}</b>. We recommend to use at least 1-minute checks.
-            </div>
+                <div className="form-group">
+                  <label className="monitor-title">Website Monitor Interval</label>
+                  <div className="monitor-desc">
+                    Your websites will be checked every <b>{intervalLabels[interval]}</b>. We recommend to use at least 1-minute checks.
+                  </div>
 
-            <div className="slider-container">
-              <input
-                type="range"
-                min="0"
-                max="5"
-                value={interval}
-                className="slider"
-                onChange={(e) => setInterval(parseInt(e.target.value))}
-              />
-            </div>
+                  <div className="slider-container">
+                    <input
+                      type="range"
+                      min="0"
+                      max="5"
+                      value={interval}
+                      className="slider"
+                      onChange={(e) => setInterval(parseInt(e.target.value))}
+                    />
+                  </div>
 
-            <div className="labels">
-              {shortLabels.map((label, idx) => (
-                <span key={idx}>{label}</span>
-              ))}
-            </div>
-          </div>
+                  <div className="labels">
+                    {shortLabels.map((label, idx) => (
+                      <span key={idx}>{label}</span>
+                    ))}
+                  </div>
+                </div>
 
-         <button
-            type="submit"
-              className="create-btn"
-              disabled={
-              !name.trim() ||
-              !url.trim() ||
-              (!email1.trim() && !email2.trim() && !email3.trim())
-            }
-            >
-            <Link to="/listing" className='add-btn'>Create</Link>
-          </button>
+              <button
+                  type="submit"
+                    className="create-btn"
+                    disabled={
+                    !name.trim() ||
+                    !url.trim() ||
+                    (!email1.trim() && !email2.trim() && !email3.trim())
+                  }
+                  >
+                  <Link to="/listing" className='add-btn'>Create</Link>
+                </button>
 
-          <button type="button" className="cancel-btn"><Link to="/listing" className='add-btn'>Cancel</Link></button>
-  
+                <button type="button" className="cancel-btn"><Link to="/listing" className='add-btn'>Cancel</Link></button>
+        
+              </div>
+            </form>
+          </main>
         </div>
-      </form>
-      </main>
-      </div>
       </div>
     </>
   );
