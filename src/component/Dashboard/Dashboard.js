@@ -12,23 +12,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const WebsiteCard = ({ site }) => {
-  return (
-    <div className="website-card">
-      <h2 className="website-title">{site.name}</h2>
-      <p className="website-url">{site.url}</p>
-      <div className="website-details">
-        <p>Status: <span className="status">{site.status}</span></p>
-        <p>Last Check: {site.lastCheck}</p>
-        <p>Uptime 24h: {site.uptime['24h']}</p>
-        <p>Uptime 7d: {site.uptime['7d']}</p>
-        <p>Uptime 30d: {site.uptime['30d']}</p>
-        <p>Response Time: <span className="response-time">{site.responseTime}</span></p>
-      </div>
-    </div>
-  );
-};
-
 const ResponseChart = () => {
   const data = [
     { time: '12:00', response: 220 },
@@ -36,6 +19,7 @@ const ResponseChart = () => {
     { time: '12:10', response: 210 },
     { time: '12:15', response: 221 },
     { time: '12:20', response: 218 },
+    { time: '12:25', response: 238 },
   ];
 
   return (
@@ -55,7 +39,7 @@ const ResponseChart = () => {
 };
 
 const Dashboard = () => {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
 
   const websites = [
     {
@@ -82,36 +66,47 @@ const Dashboard = () => {
       uptime: { '24h': '100%', '7d': '100%', '30d': '100%' },
       responseTime: '213 ms',
     },
-     {
+    {
       name: 'Telegram',
       url: 'https://www.telegram.org',
-      status: 'Up',
+      status: 'Down',
       lastCheck: '2 min ago',
       uptime: { '24h': '100%', '7d': '100%', '30d': '100%' },
-      responseTime: '224ms',
+      responseTime: '224 ms',
     },
   ];
+
+  const totalWebsites = websites.length;
+  const totalUp = websites.filter(site => site.status === 'Up').length;
+  const totalDown = totalWebsites - totalUp;
 
   return (
     <>
       <Navbar />
       <div className="wrapper">
         <div className="dashboard-container top-gap">
-            <div className="dashboard-container">
-                <div className="dashboard-header">
-                    <h1 className="dashboard-heading">Web Pulse Dashboard</h1>
-                        <button className="add-website-btn" onClick={() => navigate('/monitor')}>+ Add Website</button>
-                </div>
-                <div className="card-grid">
-                    {websites.map((site, idx) => (
-                        <WebsiteCard key={idx} site={site} />
-                    ))}
-                    </div>
-                    <ResponseChart />
-                </div>
+          <div className="dashboard-header">
+            <h1 className="dashboard-heading">Dashboard</h1>
+          </div>
+
+          <div className="summary-cards">
+            <div className="summary-card total">
+              <h3>Total Websites</h3>
+              <p>{totalWebsites}</p>
             </div>
+            <div className="summary-card up">
+              <h3>Up</h3>
+              <p>{totalUp}</p>
+            </div>
+            <div className="summary-card down">
+              <h3>Down</h3>
+              <p>{totalDown}</p>
+            </div>
+          </div>
+
+          <ResponseChart />
+        </div>
       </div>
-      
     </>
   );
 };
