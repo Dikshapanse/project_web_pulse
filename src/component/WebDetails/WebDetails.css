@@ -16,7 +16,8 @@ body {
 }
 
 .website-header {
-  background-color: #0f172a;
+  padding: 3px 10px 10px 10px;
+  background-color: #1f2937;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +60,7 @@ color: #b2f5ea;
 }
 
 .status-card {
-  background-color: #0e1525;
+  background-color: #1f2937;
   padding: 15px;
   border-radius: 10px;
   flex: 1;
@@ -81,7 +82,7 @@ color: #b2f5ea;
 }
 
 .uptime-card {
-  background-color: #0e1525;
+  background-color: #1f2937;
   padding: 15px;
   border-radius: 10px;
   flex: 1;
