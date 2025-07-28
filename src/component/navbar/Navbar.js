@@ -17,7 +17,9 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="logo">
-          <img src="logo2.png" alt="Logo" className="logo-img" title="WebPulse" />
+          <Link to="/">
+            <img src="logo2.png" alt="Logo" className="logo-img" title="WebPulse" />
+          </Link>  
         </div>
 
         <ul className="nav-links">
