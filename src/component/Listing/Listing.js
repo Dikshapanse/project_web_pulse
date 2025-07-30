@@ -75,14 +75,15 @@ function Listing() {
             <section className="monitor-list">
               {filteredMonitors.map((monitor) => (
                 <div className="monitor-card" key={monitor.id}>
-                  <div className={`status-dot ${monitor.isUp ? 'up' : 'down'}`}></div>
-                  <div className="monitor-info">
-                    <div className="name-url-line">
+                  <div className="monitor-info name-url-combined">
+                    <div className={`status-dot ${monitor.isUp ? 'up' : 'down'}`}></div>
+                    <div className="text-info">
                       <strong>{monitor.name}</strong>
                       <span className="url-text-inline">{monitor.url}</span>
                     </div>
-                    <p>{monitor.status}</p>
                   </div>
+                  <p>{monitor.status}</p>
+
                   <div className='time-set'>
                     <span>5 min</span>
                   </div>
