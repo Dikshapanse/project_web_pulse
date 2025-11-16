@@ -1,24 +1,28 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './AddWebsite.css';
-import Navbar from '../navbar/Navbar'; 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Navbar from '../navbar/Navbar';
 
 function AddWebsite() {
+  const navigate = useNavigate();   // ✅ FIXED navigate issue
+
   const [url, setUrl] = useState('');
   const [email1, setEmail1] = useState('');
   const [email2, setEmail2] = useState('');
   const [email3, setEmail3] = useState('');
   const [name, setName] = useState('');
-  const [interval, setInterval] = useState(2); // default index for 5min
+  const [interval, setInterval] = useState(2);
 
   const intervalLabels = [
-    "1 minute", "5 minutes","30 minutes",
+    "1 minute", "5 minutes", "30 minutes",
     "1 hour", "12 hours", "24 hours"
   ];
+
   const shortLabels = ["1m", "5m", "30m", "1h", "12h", "24h"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const data = {
       url,
       name,
@@ -27,20 +31,24 @@ function AddWebsite() {
       email3,
       interval: intervalLabels[interval],
     };
+
     console.log("Form Data Submitted:", data);
+
+    // 🟢 Navigate after form submit
+    navigate("/listing");
   };
 
   return (
     <>
       <Navbar />
-      
+
       <div className="wrapper">
         <div className="dashboard top-gap">
           <main className="main-content">
             <form className="addweb-form" onSubmit={handleSubmit}>
               <h2>Add Websites</h2>
               <div className="card">
-                
+
                 <div className="form-group">
                   <label>Website Name:</label>
                   <input
@@ -91,7 +99,7 @@ function AddWebsite() {
                 <div className="form-group">
                   <label className="monitor-title">Website Monitor Interval</label>
                   <div className="monitor-desc">
-                    Your websites will be checked every <b>{intervalLabels[interval]}</b>. We recommend to use at least 1-minute checks.
+                    Your websites will be checked every <b>{intervalLabels[interval]}</b>.
                   </div>
 
                   <div className="slider-container">
@@ -112,20 +120,28 @@ function AddWebsite() {
                   </div>
                 </div>
 
-              <button
+                {/* CREATE BUTTON */}
+                <button
                   type="submit"
-                    className="create-btn"
-                    disabled={
+                  className="create-btn"
+                  disabled={
                     !name.trim() ||
                     !url.trim() ||
                     (!email1.trim() && !email2.trim() && !email3.trim())
                   }
-                  >
-                  <Link to="/listing" className='add-btn'>Create</Link>
+                >
+                  Create
                 </button>
 
-                <button type="button" className="cancel-btn"><Link to="/listing" className='add-btn'>Cancel</Link></button>
-        
+                {/* CANCEL BUTTON */}
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={() => navigate("/listing")}
+                >
+                  Cancel
+                </button>
+
               </div>
             </form>
           </main>
