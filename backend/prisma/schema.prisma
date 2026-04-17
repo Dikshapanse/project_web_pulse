@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  role_id   Int    @id @default(autoincrement())
+  role_name String @unique
+  users     User[]
+
+  @@map("role")
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  name          String
+  email         String   @unique
+  password_hash String
+  role_id       Int?
+  dial_code     String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  role Role? @relation(fields: [role_id], references: [role_id])
+
+  @@map("users")
+}
+
+model MigrationMeta {
+  id             Int      @id @default(autoincrement())
+  migration_name String
+  date           DateTime @default(now())
+
+  @@map("migration_meta")
+}
