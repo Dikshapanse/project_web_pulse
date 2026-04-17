@@ -201,7 +201,6 @@ exports.profileUpdate = async (req, res) => {
     try {
         const { name, dial_code, mobile } = req.body;
         const userId = req.user.id; // From authMiddleware
-        console.log("Profile update request body:", req.body, "userId:", userId);
 
         if (!name && !dial_code && !mobile) {
             return res.status(400).json({ message: 'Please provide name, dial_code, or mobile to update' });
@@ -225,11 +224,8 @@ exports.profileUpdate = async (req, res) => {
         query += ' WHERE id = ?';
         params.push(userId);
         
-        console.log("Executing Update Query:", query);
-        console.log("With params:", params);
 
         const [updateResult] = await pool.query(query, params);
-        console.log("Update result:", updateResult);
 
         res.json({ message: 'Profile updated successfully' });
     } catch (error) {
@@ -255,14 +251,11 @@ exports.profileUpdate = async (req, res) => {
 exports.getProfile = async (req, res) => {
     try {
         const userId = req.user.id;
-        console.log("Fetching profile for user ID:", userId);
         const [users] = await pool.query('SELECT id, name, email, dial_code, mobile, role_id FROM users WHERE id = ?', [userId]);
         
         if (users.length === 0) {
-            console.log("Profile not found for user ID:", userId);
             return res.status(404).json({ message: 'User not found' });
         }
-        console.log("Profile found:", users[0]);
 
 
         res.json(users[0]);
